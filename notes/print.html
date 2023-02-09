@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Utils</li><li class="chapter-item expanded "><a href="utils/ffmpeg.html"><strong aria-hidden="true">1.</strong> ffmpeg</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/trunk.html"><strong aria-hidden="true">2.</strong> trunk</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Utils</li><li class="chapter-item expanded "><a href="utils/ffmpeg.html"><strong aria-hidden="true">1.</strong> ffmpeg</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="rust/trunk.html"><strong aria-hidden="true">2.</strong> trunk</a></li><li class="chapter-item expanded affix "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="linux/linux.html"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="linux/arch.html"><strong aria-hidden="true">3.1.</strong> Arch</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,6 +146,17 @@
 <pre><code class="language-sh">ffmpeg -http_persistent false -i file.m3u8 -c copy -b:a 320k output.mp3
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux"><a class="header" href="#linux">linux</a></h1>
+<p>Информация о видеокарте</p>
+<pre><code>inxi -G
+</code></pre>
+<p>Права на запуск</p>
+<pre><code>chmod +x
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="arch"><a class="header" href="#arch">arch</a></h1>
+<p>for gnome </p>
+<pre><code>yay -S extension-manager
+</code></pre>
 
                     </main>
 
@@ -164,6 +175,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
