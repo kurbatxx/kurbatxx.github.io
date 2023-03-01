@@ -161,7 +161,7 @@
 <p>build runner</p>
 <pre><code>flutter pub run build_runner build --delete-conflicting-outputs
 </code></pre>
-<p>dep for freezed</p>
+<h3 id="dep-for-freezed"><a class="header" href="#dep-for-freezed">dep for freezed</a></h3>
 <pre><code>dependencies:
     freezed_anotation:
 
@@ -169,6 +169,20 @@ dev_dependencies:
     freezed:
     build_runner:
     json_serializable:
+</code></pre>
+<h3 id="dep-riverpod_lint"><a class="header" href="#dep-riverpod_lint">dep riverpod_lint</a></h3>
+<p>pubspec.yaml</p>
+<pre><code>dev_dependencies:
+  custom_lint:
+  riverpod_lint:
+</code></pre>
+<p>analysis_options.yaml</p>
+<pre><code>analyzer:
+  plugins:
+    - custom_lint
+</code></pre>
+<p>cli</p>
+<pre><code>dart run custom_lint
 </code></pre>
 
                     </main>
@@ -188,22 +202,6 @@ dev_dependencies:
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
