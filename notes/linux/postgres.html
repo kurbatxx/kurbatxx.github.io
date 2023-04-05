@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Linux - Notes</title>
+        <title>Postgres - Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Utils</li><li class="chapter-item expanded "><a href="../utils/ffmpeg.html"><strong aria-hidden="true">1.</strong> ffmpeg</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../rust/trunk.html"><strong aria-hidden="true">2.</strong> trunk</a></li><li class="chapter-item expanded affix "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="../linux/linux.html" class="active"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/postgres.html"><strong aria-hidden="true">3.1.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="../linux/arch.html"><strong aria-hidden="true">3.2.</strong> Arch</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Flutter</li><li class="chapter-item expanded "><a href="../flutter/flutter.html"><strong aria-hidden="true">4.</strong> Flutter</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Utils</li><li class="chapter-item expanded "><a href="../utils/ffmpeg.html"><strong aria-hidden="true">1.</strong> ffmpeg</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="../rust/trunk.html"><strong aria-hidden="true">2.</strong> trunk</a></li><li class="chapter-item expanded affix "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="../linux/linux.html"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/postgres.html" class="active"><strong aria-hidden="true">3.1.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="../linux/arch.html"><strong aria-hidden="true">3.2.</strong> Arch</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Flutter</li><li class="chapter-item expanded "><a href="../flutter/flutter.html"><strong aria-hidden="true">4.</strong> Flutter</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,23 +141,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="linux"><a class="header" href="#linux">linux</a></h1>
-<p>Информация о видеокарте</p>
-<pre><code>inxi -G
+                        <h1 id="postgres"><a class="header" href="#postgres">postgres</a></h1>
+<pre><code>sudo -iu postgres
+initdb -D /var/lib/postgres/data
+exit
 </code></pre>
-<p>Права на запуск</p>
-<pre><code>chmod +x
+<pre><code>sudo systemctl start postgresql
+sudo systemctl enable postgresql
+</code></pre>
+<pre><code>psql -U postgres
+\password
+</code></pre>
+<pre><code>SHOW hba_file;
+
+sudo nano /var/lib/postgres/data/pg_hba.conf
+</code></pre>
+<p>scram-sha-256</p>
+<pre><code>sudo systemctl restart postgresql
+</code></pre>
+<pre><code>psql -U postgres 
+
+CREATE DATABASE crm_db OWNER postgres;
+
+\c crm_db
+
+\i base.sql
+</code></pre>
+<pre><code>psql -U postgres -d crm_db
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../rust/trunk.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../linux/linux.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../linux/postgres.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../linux/arch.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -167,11 +188,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../rust/trunk.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../linux/linux.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../linux/postgres.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../linux/arch.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
