@@ -9,8 +9,8 @@ button {
     background-color: initial;
     color: inherit;
     font: inherit;
-    outline: none;
     /* No TAB indicator */
+    outline: none;
 }
 
 /* BASE BODY */
