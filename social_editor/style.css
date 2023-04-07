@@ -39,6 +39,19 @@ button {
     }
 }
 
+
+@keyframes fade-in-from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -46,6 +59,18 @@ button {
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes make-smaller {
+    0% {
+        height: 100%;
+        width: 100%;
+    }
+
+    100% {
+        height: 75%;
+        width: 78%;
     }
 }
 
@@ -325,3 +350,110 @@ button:hover,
 button:focus {
     background-color: #26438D;
 }
+
+.artboard {
+    height: calc(100vh - 50px - 55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*- optinal -*/
+    margin-top: -25px;
+    column-gap: 20px;
+}
+
+.canvas {
+    height: 57.5vh;
+    width: 48.6vw;
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+.canvas__bg-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+}
+
+.canvas__fg-img {
+    height: 75%;
+    width: 78%;
+    object-fit: cover;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    cursor: grab;
+    animation: make-smaller 1s 0.2s backwards;
+}
+
+.canvas__circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    animation: fade-in 1s 1s backwards;
+}
+
+.canvas__circle:nth-of-type(1) {
+    top: 11.5%;
+    left: 10.4%;
+    cursor: nw-resize;
+}
+
+.canvas__circle:nth-of-type(2) {
+    top: 11.5%;
+    right: 10.4%;
+    cursor: sw-resize;
+}
+
+.canvas__circle:nth-of-type(3) {
+    bottom: 11.5%;
+    left: 10.4%;
+    cursor: sw-resize;
+}
+
+.canvas__circle:nth-of-type(4) {
+    bottom: 11.5%;
+    right: 10.4%;
+    cursor: nw-resize;
+}
+
+.tools {
+    height: 57.5vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    animation: fade-in-from-right 0.5s;
+}
+
+.tool {
+    background-color: #E1E6E9;
+    height: 44px;
+    width: 44px;
+    border-radius: 8px;
+    color: #404446;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.tool--active {
+    background-color: #2B363B;
+    color: #fff;
+}
+
+.tool:last-child {
+    margin-top: auto;
+}
+
+.tool:hover,
+.tool:focus {
+    background-color: #2B363B;
+    color: #fff;
+}
+
+.tool-icon {}
