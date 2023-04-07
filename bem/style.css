@@ -1,0 +1,30 @@
+/* #home-page p {
+    font-size: 50px;
+}
+
+.card p {
+    font-size: 16px !important;
+} */
+
+/*-----------------------*/
+
+/* .card {}
+
+.img {
+    height: 100px;
+}
+
+.text {} */
+
+
+/*-----------------------*/
+
+.card__img {
+    height: 100px;
+}
+
+.comment__img {
+    height: 50px;
+}
+
+/*-----------------------*/
