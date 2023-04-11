@@ -378,4 +378,41 @@ html {
   background-color: #E7EDEE;
   grid-column: 2/3;
   grid-row: 3/4;
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  text-align: center;
+  padding: 0 20px;
+}
+.step__icon {
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #FFF;
+  margin-bottom: 17px;
+  line-height: 50px;
+}
+.step__icon--1 {
+  color: #67B941;
+}
+.step__icon--2 {
+  color: #38B049;
+}
+.step__icon--3 {
+  color: #1EA97B;
+}
+.step__text {
+  color: #555A5B;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.second-heading {
+  color: #161616;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
 }
