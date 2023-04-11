@@ -259,6 +259,21 @@ html {
   margin-top: -2px;
 }
 
+.footer {
+  padding-top: 50px;
+  padding-left: 35px;
+  font-size: 11px;
+  color: rgba(169, 180, 183, 0.6);
+}
+.footer__list {
+  display: flex;
+  column-gap: 15px;
+  margin-top: 10px;
+}
+.copyright {
+  font-size: inherit;
+}
+
 .gallery {
   background-color: #EEF3F4;
   grid-column: 2/3;
