@@ -1,0 +1,30 @@
+html {
+    color-scheme: dark;
+}
+
+body {
+    font-family: system-ui;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+main {
+    width: min(70ch, 100% - 4rem);
+    margin-inline: auto;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+/* -------------- */
+
+.card {
+    margin: 1rem;
+    padding: 1rem;
+    background: hsl(200, 50%, 12.5%);
+    border-radius: .5rem;
+}
